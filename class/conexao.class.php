@@ -10,7 +10,7 @@ class Conexao{
 
     public function __construct(){
         $this->servidor = "localhost";
-        $this->banco = "backsenac";
+        $this->banco = "vtxp";
         $this->usuario = "root";
         $this->senha = "";
     }

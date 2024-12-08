@@ -1,7 +1,6 @@
 <?php
-    include 'class/contatos.class.php';
     include 'class/usuario.class.php';
-    $contato = new Contatos();
+
     $usuarios = new Usuario();
 ?>
 <!DOCTYPE html>

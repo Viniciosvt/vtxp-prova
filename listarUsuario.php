@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'class/contatos.class.php';
 include 'class/usuario.class.php';
 
 if(!isset($_SESSION['logado'])){
@@ -8,7 +7,6 @@ if(!isset($_SESSION['logado'])){
     exit;
 }
 
-$contato = new Contatos();
 $usuario = new Usuario();
 $usuario->setUsuario($_SESSION['logado']);
 ?>
@@ -90,6 +88,7 @@ $usuario->setUsuario($_SESSION['logado']);
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <?php if ($usuario->temPermissoes('add')): ?>
                     <li><a class="dropdown-item" href="adicionarUsuario.php">Adicionar Usuário</a></li>
+                    <li><a class="dropdown-item" href="index.php">Gerenciar Sementes</a></li>
                 <?php endif; ?>
                 <li><a class="dropdown-item text-danger" href="sair.php">Sair</a></li>
             </ul>

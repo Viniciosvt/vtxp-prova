@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include 'class/contatos.class.php';
+    include 'class/fornecedor.class.php';
     include 'class/usuario.class.php';
 
     if(!isset($_SESSION['logado'])){
@@ -8,7 +8,7 @@ session_start();
         exit;
     }
 
-    $contato = new Contatos();
+    $fornecedor = new Fornecedor();
     $usuarios = new Usuario();
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Contato</title>
+    <title>Adicionar Semente</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -53,39 +53,35 @@ session_start();
 <body>
 
 <div class="container">
-    <h1 class="form-title">Adicionar Contato</h1>
-    <form method="POST" action="adicionarContatoSubmit.php">
+    <h1 class="form-title">Adicionar Fornecedor</h1>
+    <form method="POST" action="adicionarFornecedorSubmit.php">
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome completo">
+            <label for="nome" class="form-label">Nome ou Razão Social </label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite nome da semente">
         </div>
         <div class="mb-3">
-            <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite o telefone">
+            <label for="cpf_cnpj" class="form-label">CPF ou CNPJ</label>
+            <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="Digite o CPF ou CNPJ">
         </div>
         <div class="mb-3">
             <label for="endereco" class="form-label">Endereço</label>
             <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite o endereço">
         </div>
         <div class="mb-3">
-            <label for="dt_nasc" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control" id="dt_nasc" name="dt_nasc">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite telefone de contato">
         </div>
         <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição do contato">
-        </div>
-        <div class="mb-3">
-            <label for="linkedin" class="form-label">LinkedIn</label>
-            <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Perfil do LinkedIn">
+            <label for="categorias" class="form-label">Categorias</label>
+            <input type="text" class="form-control" id="categorias" name="categorias" placeholder="Tipos de sementes fornecidas.">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">E-mail</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail">
         </div>
         <div class="mb-3">
-            <label for="foto" class="form-label">URL da Foto</label>
-            <input type="form" class="form-control" id="foto" name="foto" placeholder="URL da foto do contato">
+            <label for="foto" class="form-label">Foto do Fornecedor</label>
+            <input type="file" class="form-control" id="foto" name="foto" placeholder="URL da foto do fornecedor">
         </div>
         <div class="d-grid">
             <input type="submit" class="btn btn-custom" name="btCadastrar" value="ADICIONAR">

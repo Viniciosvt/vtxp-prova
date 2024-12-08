@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include 'class/contatos.class.php';
+    include 'class/fornecedor.class.php';
     include 'class/usuario.class.php';
 
     if(!isset($_SESSION['logado'])){
@@ -8,10 +8,10 @@ session_start();
         exit;
     }
 
-    $contato = new Contatos();
+    $contato = new Fornecedor();
     $usuarios = new Usuario();
 
-    $con = new Contatos();
+    $con = new Fornecedor();
 
     if(!empty($_GET['id'])){
 
